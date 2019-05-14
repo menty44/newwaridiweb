@@ -8,6 +8,8 @@ angular.module('Authentication')
         var service = {};
 
         service.Login = function (username, password, callback) {
+            console.log(username);
+            console.log(password);
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
@@ -21,14 +23,16 @@ angular.module('Authentication')
 
             /* fred new Dummy authentication for testing, uses $timeout to simulate api call
            ----------------------------------------------*/
-            setTimeout(() =>{
-                    let response = { success: username === 'test' && password === 'test' };
+            // setTimeout(() =>{
+                    let response = { success: username === 'menty44@gmail' && password === 'test' };
                     if(!response.success) {
+                        console.log('wrong password');
+                        // $rootScope.wrong = 'wrong password';
                         response.message = 'Username or password is incorrect';
                     }
                     callback(response);
-                    },
-                1000);
+                //     },
+                // 1000);
 
 
             /* Use this for real authentication

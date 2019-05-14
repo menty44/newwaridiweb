@@ -17,12 +17,18 @@ angular.module('BasicHttpAuthExample', [
         .when('/login', {
             controller: 'LoginController',
             templateUrl: 'modules/authentication/views/login.html',
-            hideMenus: true
+            // hideMenus: true
         })
  
         .when('/', {
             controller: 'HomeController',
             templateUrl: 'modules/home/views/home.html'
+        })
+
+        .when('/register', {
+            controller: 'RegisterController',
+            templateUrl: 'modules/authentication/views/register.html',
+            // hideMenus: true
         })
  
         .otherwise({ redirectTo: '/login' });
