@@ -24,7 +24,7 @@ angular.module('Authentication')
             /* fred new Dummy authentication for testing, uses $timeout to simulate api call
            ----------------------------------------------*/
             // setTimeout(() =>{
-                    let response = { success: username === 'menty44@gmail' && password === 'test' };
+                    let response = { success: username === 'menty44@gmail.com' && password === 'menty44' };
                     if(!response.success) {
                         console.log('wrong password');
                         // $rootScope.wrong = 'wrong password';
