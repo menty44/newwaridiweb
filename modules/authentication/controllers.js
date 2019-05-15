@@ -29,19 +29,8 @@ angular.module('Authentication')
                 // reset login status
                 AuthenticationService.ClearCredentials();
 
-                $scope.login = function () {
+                $scope.register = function () {
                     $scope.dataLoading = true;
-                    console.log('login');
-                    console.log('username '+$scope.username);
-                    console.log('password    '+$scope.password);
-                    AuthenticationService.Login($scope.username, $scope.password, function(response) {
-                        if(response.success) {
-                            AuthenticationService.SetCredentials($scope.username, $scope.password);
-                            $location.path('/');
-                        } else {
-                            $scope.error = response.message;
-                            $scope.dataLoading = false;
-                        }
-                    });
+
                 };
     }]);

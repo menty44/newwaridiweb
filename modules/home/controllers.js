@@ -7,9 +7,12 @@ angular.module('Home')
     function ($scope, $rootScope, $location) {
         // $scope.navoff = true;
         $scope.nav = "on";
-        $scope.firstName = "John";
-
-
+        $scope.fname += 16.6666666667;
+        $scope.lname = "";
+        $scope.phone = "";
+        $scope.email = "";
+        $scope.gender = "";
+        $scope.password = "";
         $scope.reload = function reload(){
             // (function()
             //     {
