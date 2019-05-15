@@ -33,4 +33,16 @@ angular.module('Home')
             
         }
       
-    }]);
+    }])
+
+.controller('ResetPasswordController',
+    ['$scope', '$rootScope', '$location', 'AuthenticationService',
+        function ($scope, $rootScope ) {
+
+            $scope.title =  "Reset Password";
+            $scope.cpassword =  "";
+            $scope.npassword =  "";
+            $scope.changePassword = function () {
+
+            };
+        }]);

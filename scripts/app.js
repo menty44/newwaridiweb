@@ -60,6 +60,11 @@ angular.module('BasicHttpAuthExample', [
             templateUrl: 'modules/home/views/profile.html'
         })
 
+        .when('/profile/resetpassword', {
+            controller: 'ResetPasswordController',
+            templateUrl: 'modules/home/views/resetPassword.html'
+        })
+
         .when('/users', {
             controller: 'HomeController',
             templateUrl: 'modules/home/views/users.html'
