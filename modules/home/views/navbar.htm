@@ -1,6 +1,6 @@
-<div>
+<div ng-controller="HomeController">
     <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;" ng-cloak>
+        <nav class="navbar navbar-expand-lg pink-text" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" ng-cloak>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -9,42 +9,45 @@
       
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0" ng-cloak>
-                <li ng-if="nav === on" class="nav-item active">
-                  <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+
+                <li style="color: white;" ng-if="nav === 'on'" class="nav-item active">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Dashboard</h4> <span class="sr-only">(current)</span></a>
                 </li>
-                <li ng-if="nav === on" class="nav-item">
-                  <a class="nav-link" href="#">Profile</a>
+                <li ng-if="nav === 'on'" class="nav-item">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Profile</h4></a>
                 </li>
-                <li ng-if="nav === on" class="nav-item">
-                  <a class="nav-link" href="#">Services</a>
+                <li ng-if="nav === 'on'" class="nav-item">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Services</h4></a>
                 </li>
-                <li ng-if="nav === on" class="nav-item">
-                  <a class="nav-link" href="#">Categories</a>
+                <li ng-if="nav === 'on'" class="nav-item">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Categories</h4></a>
                 </li>
-                <li ng-if="nav === on" class="nav-item">
-                  <a class="nav-link" href="#">Users</a>
+                <li ng-if="nav === 'on'" class="nav-item">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Users</h4></a>
                 </li>
-                <li ng-if="nav === on" class="nav-item">
-                  <a class="nav-link" href="#">Finance</a>
+                <li ng-if="nav === 'on'" class="nav-item">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Finance</h4></a>
                 </li>
-                <li ng-if="nav === on" class="nav-item">
-                  <a class="nav-link" href="#">Advertisements</a>
+                <li ng-if="nav === 'on'" class="nav-item">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Advertisements</h4></a>
                 </li>
-                <li ng-if="nav === on" class="nav-item">
-                  <a class="nav-link" href="#">Reports</a>
+                <li ng-if="nav === 'on'" class="nav-item">
+                  <a class="nav-link" href="#"><h4 style="color: deeppink">Reports</h4></a>
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
                 <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
                 <ul class="form-inline navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li ng-if="nav === on" class="nav-item">
-                    <a class="nav-link" href="#/login" ng-click="logout()">Logout</a>
+                  <li ng-if="nav === 'on'" class="nav-item">
+                    <!--<a class="nav-link" href="#/login" ng-click="logout()"><h4 style="color: red;">Logout</h4></a>-->
+                    <button class="btn btn-block btn-danger" > <a href="#/login"><h4 style="color: white;">Logout</h4></a></button>
+                    <!--<a class="nav-link"  ng-click="logout()"><h4 style="color: red;">Logout</h4></a>-->
                   </li>
-                  <li ng-if="nav !== on" class="nav-item">
+                  <li ng-if="nav !== 'on'" class="nav-item">
                     <a class="nav-link" href="#">Login</a>
                   </li>
-                  <li ng-if="nav !== on" class="nav-item">
+                  <li ng-if="nav !== 'on'" class="nav-item">
                     <a class="nav-link" href="#">Register</a>
                   </li>
                 </ul>

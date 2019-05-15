@@ -5,25 +5,27 @@ angular.module('Home')
 .controller('HomeController',
     ['$scope',
     function ($scope, $rootScope, $location) {
-        // (function()
-        //     {
-        //     if( window.localStorage )
-        //     {
-        //         if( !localStorage.getItem('firstLoad') )
-        //         {
-        //         localStorage['firstLoad'] = true;
-        //         window.location.reload();
-        //         }  
-        //         else
-        //         localStorage.removeItem('firstLoad');
-        //     }
-        //     })();
-
         // $scope.navoff = true;
-        $rootScope.nav = 'on';
+        $scope.nav = "on";
+        $scope.firstName = "John";
 
 
-        $scope.logout = function logout($location){
+        $scope.reload = function reload(){
+            // (function()
+            //     {
+                if( window.localStorage )
+                {
+                    if( !localStorage.getItem('firstLoad') )
+                    {
+                    localStorage['firstLoad'] = true;
+                    window.location.reload();
+                    }
+                    else
+                    localStorage.removeItem('firstLoad');
+                }
+                // })();
+        };
+        $scope.logout = function logout(){
             console.log('logout test');
             
         }

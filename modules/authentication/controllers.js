@@ -14,27 +14,8 @@ angular.module('Authentication')
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.username, $scope.password, function(response) {
                 if(response.success) {
-                    // ()=>{
-                    //     console.log('status on');
-                    //     $rootScope.nav = 'on';
-                    // }
                     AuthenticationService.SetCredentials($scope.username, $scope.password);
                     $location.path('/');
-                    // (function()
-                    //     {
-                    //     if( window.localStorage )
-                    //     {
-                    //         if( !localStorage.getItem('firstLoad') )
-                    //         {
-                    //         localStorage['firstLoad'] = true;
-                    //         $location.path('/');
-                    //         window.location.reload();
-
-                    //         }  
-                    //         else
-                    //         localStorage.removeItem('firstLoad');
-                    //     }
-                    //     })();
                 } else {
                     $scope.error = response.message;
                     $scope.dataLoading = false;
