@@ -80,6 +80,21 @@ angular.module('BasicHttpAuthExample', [
             templateUrl: 'modules/authentication/views/register.html',
             // hideMenus: true
         })
+
+        .when('/sms/list', {
+            controller: 'HomeController',
+            templateUrl: 'modules/home/views/sms.html'
+        })
+
+        .when('/sms/single', {
+            controller: 'singleSmsController',
+            templateUrl: 'modules/home/views/singlesms.html'
+        })
+
+        .when('/sms/multiple', {
+            controller: 'multipleSmsController',
+            templateUrl: 'modules/home/views/multiplesms.html'
+        })
  
         .otherwise({ redirectTo: '/login' });
 }])

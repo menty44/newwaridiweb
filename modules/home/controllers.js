@@ -45,4 +45,28 @@ angular.module('Home')
             $scope.changePassword = function () {
 
             };
+        }])
+
+.controller('singleSmsController',
+    ['$scope', '$rootScope', '$location', 'AuthenticationService',
+        function ($scope, $rootScope ) {
+
+            $scope.title =  "Send Single SMS";
+            $scope.cpassword =  "";
+            $scope.npassword =  "";
+            $scope.changePassword = function () {
+
+            };
+        }])
+
+.controller('multipleSmsController',
+    ['$scope', '$rootScope', '$location', 'AuthenticationService',
+        function ($scope, $rootScope ) {
+
+            $scope.title =  "Send Promotional SMS";
+            $scope.cpassword =  "";
+            $scope.npassword =  "";
+            $scope.changePassword = function () {
+
+            };
         }]);
