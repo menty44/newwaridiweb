@@ -60,7 +60,8 @@ angular.module('Home')
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
         function ($scope, $rootScope ) {
 
-            $scope.title =  "Send Promotional SMS";
+            $scope.title =  "All Categories";
+            $scope.createTitle =  "Create New Category";
             $scope.cpassword =  "";
             $scope.npassword =  "";
             $scope.changePassword = function () {
@@ -141,6 +142,17 @@ angular.module('Home')
             };
         }])
 
+.controller('ticketController',
+    ['$scope', '$rootScope', '$location', 'AuthenticationService',
+        function ($scope, $rootScope ) {
+
+            $scope.title =  "All Tickets";
+            $scope.cpassword =  "";
+            $scope.npassword =  "";
+            $scope.changePassword = function () {
+
+            };
+        }])
 
 .controller('serviceController',
     ['$scope', '$rootScope', '$location', 'AuthenticationService',

@@ -45,9 +45,9 @@ angular.module('BasicHttpAuthExample', [
             templateUrl: 'modules/home/views/categories.html'
         })
 
-        .when('categories/new', {
+        .when('cat/new', {
             controller: 'categoriesController',
-            templateUrl: 'modules/home/views/newCategory.html'
+            templateUrl: 'modules/home/views/newCategory.htm'
         })
 
         .when('/finance', {
@@ -113,7 +113,7 @@ angular.module('BasicHttpAuthExample', [
 
         .when('/tickets', {
             controller: 'ticketController',
-            templateUrl: 'modules/home/views/tickets.html'
+            templateUrl: 'modules/home/views/ticket.htm'
         })
 
         .when('/tickets/pending', {
@@ -144,7 +144,9 @@ angular.module('BasicHttpAuthExample', [
             // redirect to login page if not logged in
             // if ($location.path() !== '/login' && $location.path() !== '/services' && $location.path() !== '/categories' &&
             //     $location.path() !== '/users' &&  $location.path() !== '/ads' &&   !$rootScope.globals.currentUser) {
-                if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+                if ($location.path() !== '/login' && !$rootScope.globals.currentUser
+                    // || $location.path() !== '/categories/create' && !$rootScope.globals.currentUser
+                ) {
                     $location.path('/login');
             }
         });
