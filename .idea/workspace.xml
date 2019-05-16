@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e2a314a-526a-4280-91c2-75eb4a7c0fc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/home/views/ticket.htm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/authentication/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/modules/authentication/views/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/home/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/home/controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/home/views/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/modules/home/views/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/home/views/newCategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/modules/home/views/newCategory.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/home/views/tickets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3132832">
+    <splitter split-orientation="horizontal" split-proportion="0.14464884">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
@@ -109,8 +102,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/modules/authentication/views/login.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="344">
-                  <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+                <state relative-caret-position="207">
+                  <caret line="147" column="51" selection-start-line="147" selection-start-column="51" selection-end-line="147" selection-end-column="51" />
                   <folding>
                     <element signature="e#3249#3272#0" expanded="true" />
                     <element signature="e#3295#3321#0" expanded="true" />
@@ -149,6 +142,8 @@
       <find>ticketController</find>
       <find>tit</find>
       <find>categorie</find>
+      <find>text-c</find>
+      <find>text-center</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -259,7 +254,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558008290539" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558008806239" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -297,7 +292,7 @@
       <workItem from="1557828839828" duration="10462000" />
       <workItem from="1557902755744" duration="25171000" />
       <workItem from="1557987604057" duration="793000" />
-      <workItem from="1557995390144" duration="9543000" />
+      <workItem from="1557995390144" duration="10136000" />
     </task>
     <task id="LOCAL-00001" summary="new pages,added bootstrap">
       <created>1557835107566</created>
@@ -355,11 +350,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557997292157</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="new login ui look">
+      <created>1558008304025</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1558008304025</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47972000" />
+    <option name="totallyTimeSpent" value="48565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
@@ -441,7 +443,8 @@
     <MESSAGE value="added progress bar on both create user and reset password page, reset password ui done pending logic" />
     <MESSAGE value="wip" />
     <MESSAGE value="more ui work, bugs on the ticketing pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="more ui work, bugs on the ticketing pages" />
+    <MESSAGE value="new login ui look" />
+    <option name="LAST_COMMIT_MESSAGE" value="new login ui look" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/karma.conf.js">
@@ -722,8 +725,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/authentication/views/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="207">
+          <caret line="147" column="51" selection-start-line="147" selection-start-column="51" selection-end-line="147" selection-end-column="51" />
           <folding>
             <element signature="e#3249#3272#0" expanded="true" />
             <element signature="e#3295#3321#0" expanded="true" />
