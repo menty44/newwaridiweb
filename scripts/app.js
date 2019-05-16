@@ -10,7 +10,7 @@ angular.module('BasicHttpAuthExample', [
     'ngRoute',
     'ngCookies'
 ])
- 
+
 .config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
@@ -19,44 +19,59 @@ angular.module('BasicHttpAuthExample', [
             templateUrl: 'modules/authentication/views/login.html',
             // hideMenus: true
         })
- 
+
         .when('/', {
             controller: 'HomeController',
             templateUrl: 'modules/home/views/home.html'
         })
 
         .when('/profile', {
-            controller: 'HomeController',
+            controller: 'profileController',
             templateUrl: 'modules/home/views/home.html'
         })
 
         .when('/services', {
-            controller: 'HomeController',
+            controller: 'serviceController',
             templateUrl: 'modules/home/views/services.html'
         })
 
+        .when('/services/new', {
+            controller: 'serviceController',
+            templateUrl: 'modules/home/views/newService.html'
+        })
+
         .when('/categories', {
-            controller: 'HomeController',
+            controller: 'categoriesController',
             templateUrl: 'modules/home/views/categories.html'
         })
 
+        .when('categories/new', {
+            controller: 'categoriesController',
+            templateUrl: 'modules/home/views/newCategory.html'
+        })
+
         .when('/finance', {
-            controller: 'HomeController',
+            controller: 'financeController',
             templateUrl: 'modules/home/views/finance.html'
         })
 
         .when('/ads', {
-            controller: 'HomeController',
+            controller: 'adsController',
+            templateUrl: 'modules/home/views/adverts.html'
+        })
+
+        .when('/ads/new', {
+            controller: 'adsController',
             templateUrl: 'modules/home/views/adverts.html'
         })
 
         .when('/reports', {
-            controller: 'HomeController',
+            controller: 'reportsController',
             templateUrl: 'modules/home/views/reports.html'
         })
 
         .when('/profile', {
-            controller: 'HomeController',
+            controller: 'profileController',
             templateUrl: 'modules/home/views/profile.html'
         })
 
@@ -82,12 +97,12 @@ angular.module('BasicHttpAuthExample', [
         })
 
         .when('/sms/list', {
-            controller: 'HomeController',
+            controller: 'smsController',
             templateUrl: 'modules/home/views/sms.html'
         })
 
         .when('/sms/single', {
-            controller: 'singleSmsController',
+            controller: 'smsController',
             templateUrl: 'modules/home/views/singlesms.html'
         })
 
@@ -95,19 +110,36 @@ angular.module('BasicHttpAuthExample', [
             controller: 'multipleSmsController',
             templateUrl: 'modules/home/views/multiplesms.html'
         })
- 
+
+        .when('/tickets', {
+            controller: 'ticketController',
+            templateUrl: 'modules/home/views/tickets.html'
+        })
+
+        .when('/tickets/pending', {
+            controller: 'ticketController',
+            templateUrl: 'modules/home/views/pendingtickets.html'
+        })
+
+
+        .when('/tickets/resolved', {
+            controller: 'ticketController',
+            templateUrl: 'modules/home/views/resolvedtickets.html'
+        })
+
+
         .otherwise({ redirectTo: '/login' });
 }])
- 
+
 .run(['$rootScope', '$location', '$cookieStore', '$http',
     function ($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
         if ($rootScope.globals.currentUser) {
             $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-            
+
         }
- 
+
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in
             // if ($location.path() !== '/login' && $location.path() !== '/services' && $location.path() !== '/categories' &&

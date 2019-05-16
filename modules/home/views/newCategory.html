@@ -1,0 +1,98 @@
+<ng-include src="'modules/home/views/navbar.htm'"></ng-include>
+
+<div class="col-sm-2">
+    <div style="padding-top: 2%; padding-bottom: 2%;">
+        <a href="#/users">
+            <button style="width: 100%;" type="button" class="btn btn-outline-info">List All Categories
+            </button>
+        </a>
+    </div>
+</div>
+
+<div class="col-sm-8">
+
+    <div  style="padding-top: 2%" class="form-group">
+        <div ng-hide="lname">
+            <div class="progress" ng-if="fname " >
+                <div ng-if="fname" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="16.6666666667" aria-valuemin="0" aria-valuemax="100" style="width: 16.6666666667%"></div>
+            </div>
+        </div>
+
+        <div ng-hide="gender">
+            <div class="progress" ng-if="lname " >
+                <div ng-if="lname" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="33.3333333334" aria-valuemin="0" aria-valuemax="100" style="width: 33.3333333334%"></div>
+            </div>
+        </div>
+
+        <div ng-hide="phone">
+            <div class="progress" ng-if="gender">
+                <div ng-if="gender" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50.0000000001" aria-valuemin="0" aria-valuemax="100" style="width: 50.0000000001%"></div>
+            </div>
+        </div>
+
+        <div ng-hide="email">
+            <div class="progress" ng-if="phone">
+                <div ng-if="phone" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="66.6666666668" aria-valuemin="0" aria-valuemax="100" style="width: 66.6666666668%"></div>
+            </div>
+        </div>
+
+        <div ng-hide="password">
+            <div class="progress" ng-if="email">
+                <div ng-if="email" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 83.3333333335%"></div>
+            </div>
+        </div>
+
+        <div>
+            <div class="progress" ng-if="password">
+                <div ng-if="password" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <h2>Create New Category</h2>
+    </div>
+    <form name="form" class=" border border-light p-5">
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" ng-model="fname" name="fname" placeholder="">
+            <span style="color: red" ng-show="!fname">first name Required!</span>
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" ng-model="lname" placeholder="">
+            <span style="color: red" ng-show="!lname">last name Required!</span>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" id="gender" ng-model="gender" placeholder="">
+            <span style="color: red" ng-show="!gender">gender Required!</span>
+        </div>
+        <div class="form-group">
+            <label for="phone">Mobile Number</label>
+            <input type="text" class="form-control" id="phone" ng-model="phone" placeholder="" maxlength="10">
+            <small id="emailHelp" class="form-text text-muted">Input it in the format : 0700000000 <span style="color: red" ng-show="!phone"> phone number Required!</span></small>
+
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <!--<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">-->
+            <input type="email" name="email" id="email" class="form-control" placeholder="" ng-model="email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
+            <span style="color: red" ng-show="!email">email is Required!</span>
+            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" ng-model="password" placeholder="">
+            <span style="color: red" ng-show="!password">password is Required!</span>
+        </div>
+        <div class="form-group" style="padding-top: 2%">
+            <button style="width: 100%; background: deeppink; border: none;" type="submit" class="btn btn-primary">Create</button>
+
+        </div>
+    </form>
+
+</div>
+<div class="col-sm-2"></div>
