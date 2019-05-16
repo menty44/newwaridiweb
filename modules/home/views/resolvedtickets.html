@@ -1,5 +1,62 @@
-<ng-include src="'modules/home/views/navbar.htm'"></ng-include>
-<div class="col-sm-2">
+<div ng-controller="HomeController">
+    <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+    <nav class="navbar navbar-expand-lg pink-text" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" ng-cloak>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--<a class="navbar-brand" href="#">Navbar</a>-->
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" ng-cloak>
+
+                <li style="color: white;" ng-if="nav === 'on'" class="nav-item active">
+                    <a class="nav-link" href="#"><h4 style="color: deeppink">Dashboard</h4> <span class="sr-only">(current)</span></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/services"><h4 style="color: deeppink">Services</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/categories"><h4 style="color: deeppink">Categories</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/users"><h4 style="color: deeppink">Users</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/finance"><h4 style="color: deeppink">Finance</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/ads"><h4 style="color: deeppink">Advertisements</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/sms/list"><h4 style="color: deeppink">Send SMS</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/profile"><h4 style="color: deeppink">Profile</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/tickets"><h4 style="color: deeppink">Tickets</h4></a>
+                </li>
+                <li ng-if="nav === 'on'" class="nav-item">
+                    <a class="nav-link" href="#/reports"><h4 style="color: deeppink">Reports</h4></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+                <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+                <ul class="form-inline navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li ng-if="nav === 'on'" class="nav-item">
+                        <!--<a class="nav-link" href="#/login" ng-click="logout()"><h4 style="color: red;">Logout</h4></a>-->
+                        <a href="#/login">
+                            <button class="btn btn-block btn-danger" > <h4 style="color: white;">Logout</h4></button>
+                        </a>
+                        <!--<a class="nav-link"  ng-click="logout()"><h4 style="color: red;">Logout</h4></a>-->
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+</div><div class="col-sm-2">
     <div style="padding-top: 2%; padding-bottom: 2%;">
         <a href="/#/tickets/pending">
             <button style="width: 100%;" type="button" class="btn btn-outline-danger">Pending
