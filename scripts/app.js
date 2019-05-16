@@ -62,7 +62,7 @@ angular.module('BasicHttpAuthExample', [
 
         .when('/ads/new', {
             controller: 'adsController',
-            templateUrl: 'modules/home/views/adverts.html'
+            templateUrl: 'modules/home/views/newAd.html'
         })
 
         .when('/reports', {

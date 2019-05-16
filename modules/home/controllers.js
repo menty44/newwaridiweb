@@ -122,7 +122,8 @@ angular.module('Home')
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
         function ($scope, $rootScope ) {
 
-            $scope.title =  "Send Promotional SMS";
+            $scope.title =  "List All Advertisements";
+            $scope.newTitle =  "Create New Advertisement";
             $scope.cpassword =  "";
             $scope.npassword =  "";
             $scope.changePassword = function () {
