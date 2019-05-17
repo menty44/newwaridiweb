@@ -1,0 +1,28 @@
+{
+  "name": "waridi",
+  "version": "1.0.0",
+  "description": "Dashboard for managing the mobile users",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menty44/newwaridiweb.git"
+  },
+  "keywords": [
+    "Beauty",
+    "waridi",
+    "parlor",
+    "webapp"
+  ],
+  "author": "menty44@gmail.com | fred.oluoch@blaqueyard.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menty44/newwaridiweb/issues"
+  },
+  "homepage": "https://github.com/menty44/newwaridiweb#readme"
+}
