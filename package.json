@@ -4,9 +4,12 @@
   "description": "Dashboard for managing the mobile users",
   "main": "Gruntfile.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "start": "node npm start"
   },
   "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1",
     "test": "npm test"
   },
   "repository": {
