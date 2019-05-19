@@ -4,7 +4,7 @@ angular.module('Home')
 
 .controller('HomeController',
     ['$scope',
-    function ($scope, $rootScope, $location) {
+    function ($scope, $rootScope, $location, http) {
         // $scope.navoff = true;
         $scope.nav = "on";
         $scope.fname = "";
@@ -18,7 +18,39 @@ angular.module('Home')
 
         }
 
+        $scope.loadUsers = function loadUsers(){
+            $http({
+                method : "GET",
+                url : "http://localhost:4000/register"
+                }).then(function mySuccess(response) {
+                    console.log("response", response.data);
+                $scope.myWelcome = response.data;
+                }, function myError(response) {
+                $scope.myWelcome = response.statusText;
+                });
+        }
+
     }])
+
+    .controller('loadUserController',
+    ['$scope', '$rootScope', '$http',
+        function ($scope, $rootScope, $http) {
+
+            $scope.title =  "All Users";
+            $scope.cpassword =  "";
+            $scope.npassword =  "";
+            $scope.loadUsers = function loadUsers(){
+                $http({
+                    method : "GET",
+                    url : "http://localhost:4000/register"
+                    }).then(function mySuccess(response) {
+                        console.log("response", response.data);
+                    $scope.myWelcome = response.data;
+                    }, function myError(response) {
+                    $scope.myWelcome = response.statusText;
+                    });
+            }
+        }])
 
 .controller('ResetPasswordController',
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
@@ -57,16 +89,23 @@ angular.module('Home')
         }])
 
 .controller('categoriesController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-        function ($scope, $rootScope ) {
+    ['$scope', '$rootScope', '$http',
+    function ($scope, $rootScope, $http) {
 
             $scope.title =  "All Categories";
             $scope.createTitle =  "Create New Category";
-            $scope.cpassword =  "";
-            $scope.npassword =  "";
-            $scope.changePassword = function () {
-
-            };
+            
+            $scope.loadCategories = function loadCategories(){
+                $http({
+                    method : "GET",
+                    url : "http://localhost:4000/category"
+                    }).then(function mySuccess(response) {
+                        console.log("response", response.data);
+                    $scope.myWelcome = response.data;
+                    }, function myError(response) {
+                    $scope.myWelcome = response.statusText;
+                    });
+            }
         }])
 
 
@@ -159,9 +198,20 @@ angular.module('Home')
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
         function ($scope, $rootScope ) {
 
-            $scope.title =  "Send Promotional SMS";
+            $scope.title =  "Create New Service";
             $scope.cpassword =  "";
             $scope.npassword =  "";
+            
+            $scope.bars = function bars(x){
+                drop(x);
+                // console.log(x);
+                // JSON.stringify(x);
+            };
+
+            function drop(x){
+                $scope.bar = x;
+            };
+
             $scope.changePassword = function () {
 
             };

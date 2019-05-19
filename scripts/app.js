@@ -45,7 +45,7 @@ angular.module('BasicHttpAuthExample', [
             templateUrl: 'modules/home/views/categories.html'
         })
 
-        .when('cat/new', {
+        .when('/cat/new', {
             controller: 'categoriesController',
             templateUrl: 'modules/home/views/newCategory.htm'
         })
@@ -81,7 +81,7 @@ angular.module('BasicHttpAuthExample', [
         })
 
         .when('/users', {
-            controller: 'HomeController',
+            controller: 'loadUserController',
             templateUrl: 'modules/home/views/users.html'
         })
 
