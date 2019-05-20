@@ -173,10 +173,10 @@ angular.module('Home')
         }])
 
 .controller('smsController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-        function ($scope, $rootScope ) {
+['$scope', '$rootScope', '$http',
+function ($scope, $rootScope, $http) {
 
-            $scope.title =  "Send Promotional SMS";
+            $scope.title =  "Send Promotional SMS jkhgjkhgkjhg";
             $scope.cpassword =  "";
             $scope.npassword =  "";
             
