@@ -47,7 +47,8 @@ angular.module('Home')
                         console.log("response", response.data);
                     $scope.myWelcome = response.data;
                     }, function myError(response) {
-                    $scope.myWelcome = response.statusText;
+                    console.log("badResponse", response.data);
+                    $scope.myWelcome = "No Data Available";
                     });
             }
         }])
