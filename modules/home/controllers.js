@@ -26,7 +26,7 @@ angular.module('Home')
                     console.log("response", response.data);
                 $scope.myWelcome = response.data;
                 }, function myError(response) {
-                $scope.myWelcome = response.statusText;
+                $scope.noData = "No data available!";
                 });
         }
 
@@ -47,8 +47,8 @@ angular.module('Home')
                         console.log("response", response.data);
                     $scope.myWelcome = response.data;
                     }, function myError(response) {
-                    console.log("badResponse", response.data);
-                    $scope.myWelcome = "No Data Available";
+                        console.log("bad no data")
+                    $scope.noData = "No data available !";
                     });
             }
         }])
@@ -105,7 +105,7 @@ angular.module('Home')
                     $scope.myWelcome = response.data;
                     }, function myError(response) {
                     console.log("badResponse", response.data);
-                    $scope.myWelcome = "No Data Available";
+                    $scope.noData = "No Data Available";
                     });
             }
         }])
@@ -173,15 +173,25 @@ angular.module('Home')
         }])
 
 .controller('smsController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-        function ($scope, $rootScope ) {
+['$scope', '$rootScope', '$http',
+function ($scope, $rootScope, $http) {
 
-            $scope.title =  "Send Promotional SMS";
+            $scope.title =  "Send Promotional SMS jkhgjkhgkjhg";
             $scope.cpassword =  "";
             $scope.npassword =  "";
-            $scope.changePassword = function () {
 
-            };
+            $scope.loadSMS = function loadSMS(){
+                $http({
+                    method : "GET",
+                    url : "http://localhost:4000/sms"
+                    }).then(function mySuccess(response) {
+                        console.log("response", response.data);
+                    $scope.myWelcome = response.data;
+                    }, function myError(response) {
+                    console.log("badResponse", response.data);
+                    $scope.noData = "No Data Available";
+                    });
+            }
         }])
 
 .controller('ticketController',

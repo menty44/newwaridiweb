@@ -1,3 +1,16 @@
+<style>
+    table th , table td{
+        text-align: center;
+    }
+    
+    table tr:nth-child(even){
+        background-color: #ffe6ff
+    }
+    
+    .pagination li:hover{
+        cursor: pointer;
+    }
+    </style>
 <ng-include src="'modules/home/views/navbar.htm'"></ng-include>
 <div class="col-sm-2">
     <!--<div style="padding-top: 2%; padding-bottom: 2%;">-->
@@ -55,7 +68,7 @@
         </tr>
 
     </table>
-    <div style="text-align: center; width: 100%; background: red; color: white">{{myWelcome}}</div>
+    <div style="text-align: center; width: 100%; background: red; color: white">{{noData}}</div>
     
     <!--		Start Pagination -->
                 <div class='pagination-container' >

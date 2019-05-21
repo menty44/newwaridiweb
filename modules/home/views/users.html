@@ -70,7 +70,8 @@ table tr:nth-child(even){
 	</tr>
 	
 </table>
-    <div style="text-align: center; width: 100%; background: red; color: white">{{myWelcome}}</div>
+<div style="text-align: center; width: 100%; background: red; color: white">{{noData}}</div>
+
 
 <div data-pagination="" data-num-pages="numOfPages()" 
 data-current-page="curPage" data-max-size="maxSize"  
@@ -188,7 +189,7 @@ $(function(){
 
 					$('table tr:gt(0)').each(function(){	
 						id++
-                        $(this).prepend('<td>'+id+'</td>');
+                        // $(this).prepend('<td>'+id+'</td>');
                         // $(this).prepend('<td>'+id+'</td>');
 					});
 })
