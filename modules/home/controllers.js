@@ -3,9 +3,10 @@
 angular.module('Home')
 
 .controller('HomeController',
-    ['$scope',
-    function ($scope, $rootScope, $location, http) {
-        // $scope.navoff = true;
+    ['$scope', '$rootScope', '$http',
+        function ($scope, $rootScope, $http) {
+
+            // $scope.navoff = true;
         $scope.nav = "on";
         $scope.fname = "";
         $scope.lname = "";
@@ -19,13 +20,18 @@ angular.module('Home')
         }
 
         $scope.loadUsers = function loadUsers(){
+            $scope.load = false;
             $http({
                 method : "GET",
                 url : "http://localhost:4000/register"
                 }).then(function mySuccess(response) {
                     console.log("response", response.data);
                 $scope.myWelcome = response.data;
+                $scope.load = true;
                 }, function myError(response) {
+                    console.log(response);
+                    console.log("no data");
+                $scope.load = false;
                 $scope.noData = "No data available!";
                 });
         }
