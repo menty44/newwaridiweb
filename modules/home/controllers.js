@@ -185,7 +185,7 @@ function ($scope, $rootScope, $http) {
             $scope.title =  "Send Promotional SMS jkhgjkhgkjhg";
             $scope.cpassword =  "";
             $scope.npassword =  "";
-            
+
             $scope.loadSMS = function loadSMS(){
                 $http({
                     method : "GET",
