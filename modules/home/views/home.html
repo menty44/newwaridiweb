@@ -644,11 +644,11 @@
 
 <div class="col-sm-12">
     <div class="row">
-        <div class="mypads">
+        <div class="mypads" ng-init="loadServiceshome()">
             <div class="card ">
                 <div class="header3">
-                    <h1>1</h1>
-                    <div class="loader-6 center"><span></span></div>
+                    <h1 ng-if="load === true">{{loadServicesTotal}}</h1>
+                    <div ng-if="load === false" class="loader-6 center"><span></span></div>
                 </div>
 
                 <div class="container mytitle">
@@ -657,10 +657,10 @@
             </div>
         </div>
 
-        <div class="mypads">
+        <div class="mypads" ng-init="loadSMS()">
             <div class="card ">
                 <div class="header2">
-                    <h1>1</h1>
+                    <h1 ng-if="load === true">{{smscount}}</h1>
                     <!--&lt;!&ndash; Loader 1&ndash;&gt;-->
                     <!--<div class="loader-1 center"><span></span></div>-->
                     <!--&lt;!&ndash; Loader 2 &ndash;&gt;-->
@@ -672,7 +672,7 @@
                     <!--&lt;!&ndash; Loader 5 &ndash;&gt;-->
                     <!--<div class="loader-5 center"><span></span></div>-->
                     <!--&lt;!&ndash; Loader 6 &ndash;&gt;-->
-                    <div class="loader-6 center"><span></span></div>
+                    <div ng-if="load === false" class="loader-6 center"><span></span></div>
                 </div>
 
                 <div class="container mytitle">
@@ -684,8 +684,8 @@
         <div class="mypads" ng-init="loadUsers()">
             <div class="card ">
                 <div class="header4">
-                    <h1>1</h1>
-                    <div class="loader-6 center"><span></span></div>
+                    <h1 ng-if="load === true">{{userscount}}</h1>
+                    <div ng-if="load === false" class="loader-6 center"><span></span></div>
                 </div>
 
                 <div class="container mytitle">
@@ -697,7 +697,7 @@
         <div class="mypads">
             <div class="card ">
                 <div class="header5">
-                    <h1>1</h1>
+<!--                    <h1>1</h1>-->
                     <div class="loader-6 center"><span></span></div>
                 </div>
 
@@ -710,7 +710,7 @@
         <div class="mypads">
             <div class="card ">
                 <div class="header1">
-                    <h1>1</h1>
+<!--                    <h1>1</h1>-->
                     <div class="loader-6 center"><span></span></div>
                 </div>
 

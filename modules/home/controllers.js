@@ -26,7 +26,8 @@ angular.module('Home')
                 url : "http://localhost:4000/register"
                 }).then(function mySuccess(response) {
                     console.log("response", response.data);
-                $scope.myWelcome = response.data;
+                    console.log("response", response.data.length);
+                $scope.userscount = response.data.length;
                 $scope.load = true;
                 }, function myError(response) {
                     console.log(response);
@@ -35,6 +36,38 @@ angular.module('Home')
                 $scope.noData = "No data available!";
                 });
         }
+
+            $scope.loadSMS = function loadSMS(){
+                $scope.load = false;
+                $http({
+                    method : "GET",
+                    url : "http://localhost:4000/sms"
+                }).then(function mySuccess(response) {
+                    console.log("response", response.data);
+                    $scope.smscount = response.data.length;
+                    $scope.load = true;
+                }, function myError(response) {
+                    console.log("badResponse", response.data);
+                    $scope.load = false;
+                });
+            }
+
+            $scope.loadServiceshome = function loadServiceshome(){
+                $scope.load = false;
+                $http({
+                    method : "GET",
+                    url : "http://localhost:4000/services/"
+                }).then(function mySuccess(response) {
+                    console.log("response", response.data);
+                    $scope.loadServices = response.data;
+                    $scope.loadServicesTotal = response.data.length;
+                    $scope.load = true;
+                }, function myError(response) {
+                    console.log("badResponse", response.data);
+                    $scope.noData = "No Data Available";
+                    $scope.load = false;
+                });
+            }
 
     }])
 
@@ -213,24 +246,21 @@ function ($scope, $rootScope, $http) {
         }])
 
 .controller('serviceController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-        function ($scope, $rootScope ) {
+    ['$scope', '$rootScope', '$http',
+        function ($scope, $rootScope, $http) {
 
-            $scope.title =  "Create New Service";
-            $scope.cpassword =  "";
-            $scope.npassword =  "";
-            
-            $scope.bars = function bars(x){
-                drop(x);
-                // console.log(x);
-                // JSON.stringify(x);
-            };
-
-            function drop(x){
-                $scope.bar = x;
-            };
-
-            $scope.changePassword = function () {
-
-            };
+            $scope.title =  "List Services";
+            $scope.loadServices = function loadServices(){
+                $http({
+                    method : "GET",
+                    url : "http://localhost:4000/services/"
+                }).then(function mySuccess(response) {
+                    console.log("response", response.data);
+                    $scope.loadServices = response.data;
+                    $scope.loadServicesTotal = response.data.length;
+                }, function myError(response) {
+                    console.log("badResponse", response.data);
+                    $scope.noData = "No Data Available";
+                });
+            }
         }]);

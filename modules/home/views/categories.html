@@ -55,14 +55,17 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Controls</th>
+            <th style="text-align: right">Controls</th>
         </tr>
         <tr ng-repeat="dat in myWelcome">
             <td>{{$index +1}}</td>
             <td>{{dat.name}}</td>
-            <td>
-                <button class="btn btn-info">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+            <td >
+                <span style="padding-left: 82%">
+                    <button class="btn btn-info">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </span>
+
             </td>
             
         </tr>
