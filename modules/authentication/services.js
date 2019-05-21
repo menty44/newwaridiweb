@@ -24,23 +24,38 @@ angular.module('Authentication')
             /* fred new Dummy authentication for testing, uses $timeout to simulate api call
            ----------------------------------------------*/
             // setTimeout(() =>{
-                    let response = { success: username === 'menty44@gmail.com' && password === 'menty44' };
-                    if(!response.success) {
-                        console.log('wrong password');
-                        // $rootScope.wrong = 'wrong password';
-                        response.message = 'Username or password is incorrect';
-                    }
-                    callback(response);
+            //         let response = { success: username === 'menty44@gmail.com' && password === 'menty44' };
+            //         if(!response.success) {
+            //             console.log('wrong password');
+            //             // $rootScope.wrong = 'wrong password';
+            //             response.message = 'Username or password is incorrect';
+            //         }
+            //         callback(response);
                 //     },
                 // 1000);
 
 
             /* Use this for real authentication
              ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
+            $http.post('http://localhost:4000/register/login/'+username+'/'+password+'/admin')
+               .success(function (response) {
+                   console.log('login data', response);
+                   // console.log('login datatwo', response[0].__v);
+                   if (response.code === 3){
+                       response.message = 'Username or password is incorrect, Please Try again !!!';
+                       let res = response.message;
+                       // $rootScope.newError = res;
+                           callback(response);
+                   }else if(response[0].__v === 0){
+                       callback(response);
+                   }else {
+                       response.message = 'Username or password is incorrect, Please Try again !!!';
+                       let res = response.message;
+                       // $rootScope.newError = res;
+                       callback(response);
+                   }
+
+               });
 
         };
  

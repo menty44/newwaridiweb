@@ -13,12 +13,29 @@ angular.module('Authentication')
             console.log('login');
             $scope.dataLoading = true;
             AuthenticationService.Login($scope.username, $scope.password, function(response) {
-                if(response.success) {
+                console.log('nini imekam hapa?', response);
+                // if(response.success) {
+                if(response[0] !== undefined && response[0] !== 'undefined'){
+                    let res = response.message;
+                    $scope.newError = "Username or password is incorrect, Please Try again !!!";
+                    $scope.dataLoading = false;
+                }
+                // else
+                // if (response[0].__v === 0){
+                //     AuthenticationService.SetCredentials($scope.username, $scope.password);
+                //     $location.path('/');
+                // }
+                else if(response.code === 3){
+                    console.log('nini imekam hapa mbaya damn', response.message)
+                    let res = response.message;
+                    // $rootScope.newError = res;
+                    $scope.newError = "Username or password is incorrect, Please Try again !!!";
+                    $scope.dataLoading = false;
+                }
+
+                if(response[0].__v === 0){
                     AuthenticationService.SetCredentials($scope.username, $scope.password);
                     $location.path('/');
-                } else {
-                    $scope.error = response.message;
-                    $scope.dataLoading = false;
                 }
             });
         };
