@@ -44,14 +44,12 @@ angular.module('Authentication')
                    if (response.code === 3){
                        response.message = 'Username or password is incorrect, Please Try again !!!';
                        let res = response.message;
-                       // $rootScope.newError = res;
                            callback(response);
                    }else if(response[0].__v === 0){
                        callback(response);
                    }else {
                        response.message = 'Username or password is incorrect, Please Try again !!!';
                        let res = response.message;
-                       // $rootScope.newError = res;
                        callback(response);
                    }
 
