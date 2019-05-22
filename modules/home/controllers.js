@@ -129,8 +129,8 @@ angular.module('Home')
         }])
 
 .controller('categoriesController',
-    ['$scope', '$rootScope', '$http',
-    function ($scope, $rootScope, $http) {
+    ['$scope', '$rootScope', '$http','$location',
+    function ($scope, $rootScope, $http, $location) {
 
             $scope.title =  "All Categories";
             $scope.createTitle =  "Create New Category";
@@ -147,6 +147,26 @@ angular.module('Home')
                     $scope.noData = "No Data Available";
                     });
             }
+
+        $scope.createCategories = (t)=>{
+                console.log("response", t);
+
+            $http({
+                url: "http://localhost:4000/category/add",
+                method: "POST",
+                data: { "name" : t }
+            }).then(function(response) {
+                // success
+                console.log("response", response.data);
+                $location.path('/categories');
+                swal("Success!", "Saved successfully! "+t, "success");
+            },
+            function(response) { // optional
+                // failed
+                console.log("response", response.data);
+                swal("Error!", "Error while trying to save! "+t, "error");
+            });
+        }
         }])
 
 
