@@ -37,22 +37,22 @@
     <form name="form" class=" border border-light p-5">
 
         <div class="form-group">
-            <label for="cpassword">Enter Number</label>
-            <input type="cpassword" class="form-control" id="cpassword" ng-model="cpassword" placeholder="">
-            <span style="color: red" ng-show="!cpassword">Phone Number is Required!</span>
+            <label for="mobile">Enter Number</label>
+            <input type="text" class="form-control" id="mobile" ng-model="mobile" placeholder="">
+<!--            <span style="color: red" ng-show="!cpassword">Phone Number is Required!</span>-->
         </div>
 
         <div class="form-group">
-                <label for="npassword">Compose Message</label>
-                <textarea style="padding-bottom:2%;" type="password" class="form-control" id="npassword" ng-model="npassword" placeholder="" maxlength="160"/>
+                <label for="text">Compose Message</label>
+                <textarea style="padding-bottom:2%;" type="text" class="form-control" id="text" ng-model="text" placeholder="" maxlength="160"/>
                 <!-- <div class="row"> -->
                         <small id="emailHelp" class="form-text text-muted">160 characters max</small>
                         
                 <!-- </div> -->
-                <span style="color: red" ng-show="!npassword">Message is Required!</span>
+<!--                <span style="color: red" ng-show="!npassword">Message is Required!</span>-->
                 
                     <div style="padding-top:2%;">
-                            <button style="width: 100%; background: deeppink; border: none; " type="submit" class="btn btn-primary">Send</button>
+                            <button style="width: 100%; background: deeppink; border: none; " type="submit" class="btn btn-primary" ng-click="singleSms(text, mobile)">Send</button>
                         
                         </div>
                 

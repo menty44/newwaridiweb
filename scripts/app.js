@@ -102,7 +102,7 @@ angular.module('BasicHttpAuthExample', [
         })
 
         .when('/sms/single', {
-            controller: 'smsController',
+            controller: 'singleSmsController',
             templateUrl: 'modules/home/views/singlesms.html'
         })
 

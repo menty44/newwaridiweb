@@ -105,13 +105,43 @@ angular.module('Home')
         }])
 
 .controller('singleSmsController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-        function ($scope, $rootScope ) {
+    ['$scope', '$rootScope', '$http',
+        function ($scope, $rootScope, $http) {
 
             $scope.title =  "Send Single SMS";
-            $scope.cpassword =  "";
-            $scope.npassword =  "";
-            $scope.changePassword = function () {
+
+            $scope.singleSms =  (msg, no) => {
+                console.log(no)
+                console.log(msg)
+
+                let dat = function () {
+
+                    if(!msg.startsWith("0")){
+                        return  msg;
+                    }else {
+                        let newMsg = msg.substr(1);
+                        return "+254"+newMsg;
+                    }
+
+                }
+
+                $http({
+                    url: "http://localhost:4000/sms/add",
+                    method: "POST",
+                    data: {
+                        "number": "+254720106420",
+                        "message": dat()
+                    }
+                }).then(function(response) {
+                        // success
+                        console.log("response", response.data);
+                        swal("Success!", "Sent successfully! ", "success");
+                    },
+                    function(response) { // optional
+                        // failed
+                        console.log("response", response.data);
+                        swal("Error!", "Error while trying to save! "+t, "error");
+                    });
 
             };
         }])
