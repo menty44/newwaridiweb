@@ -326,4 +326,11 @@ function ($scope, $rootScope, $http) {
                     $scope.noData = "No Data Available";
                 });
             }
+
+            $scope.newService = function newService(cat, serve){
+                console.log("response", cat);
+                console.log("response", serve);
+            }
+
+
         }]);

@@ -61,20 +61,14 @@
                     <label>{{bar}}</label>
             </div >
 
-        <div class="input-group mb-3" ng-repeat="dat in myWelcome">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Categories</label>
-            </div>
-            <div >
-                <select class="custom-select" id="inputGroupSelect01" >
-                    <!--                <option selected>Choose...</option>-->
-                    <option ng-model="cat"></option>
+                    <label >Categories</label>
+            <div style="padding-top: 1.5%; width: 100%">
+                <select class="custom-select" id="inputGroupSelect01" style="width: 100%" ng-model="cat">
+                    <option selected >Choose...</option>
+                    <option ng-repeat="dat in myWelcome" style="width: 60%">{{dat.name}}</option>
 
                 </select>
             </div>
-
-        </div>
-
 
 
         <div class="form-group" style="padding-top: 3%;">
@@ -84,7 +78,7 @@
 <!--        <div class="form-group">-->
         <div class="" id="profs">
                 <div id="field">
-                    <input autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="add first service" data-items="8"/>
+                    <input ng-model="serve" autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="add first service" data-items="8"/>
                     <button id="b1" class="btn add-more" type="button">+</button>
                 </div>
             <br>
@@ -94,7 +88,7 @@
         
 
         <div class="form-group" style="padding-top: 2%">
-            <button style="width: 100%; background: deeppink; border: none;" type="submit" class="btn btn-primary">Create</button>
+            <button style="width: 100%; background: deeppink; border: none;" type="submit" class="btn btn-primary" ng-click="newService(cat, serve)">Create</button>
 
         </div>
     </form>
@@ -111,7 +105,7 @@
             var addto = "#field" + next;
             var addRemove = "#field" + (next);
             next = next + 1;
-            var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+            var newIn = '<input autocomplete="off" ng-model="serve" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
             var newInput = $(newIn);
             var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
             var removeButton = $(removeBtn);
