@@ -313,4 +313,17 @@ function ($scope, $rootScope, $http) {
                     $scope.noData = "No Data Available";
                 });
             }
+
+            $scope.loadCategories = function loadCategories(){
+                $http({
+                    method : "GET",
+                    url : "http://localhost:4000/category"
+                }).then(function mySuccess(response) {
+                    console.log("response", response.data);
+                    $scope.myWelcome = response.data;
+                }, function myError(response) {
+                    console.log("badResponse", response.data);
+                    $scope.noData = "No Data Available";
+                });
+            }
         }]);
