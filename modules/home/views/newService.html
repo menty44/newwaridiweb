@@ -58,7 +58,7 @@
     </div>
     <form name="form" class=" border border-light p-5" ng-init="loadCategories()"  >
             <div class="form-group">
-                    <label>{{bar}}</label>
+                    <label>{{display}}</label>
             </div >
 
                     <label >Categories</label>
@@ -76,11 +76,16 @@
         </div>
 
 <!--        <div class="form-group">-->
-        <div class="" id="profs">
-                <div id="field">
-                    <input ng-model="serve" autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="add first service" data-items="8"/>
-                    <button id="b1" class="btn add-more" type="button">+</button>
-                </div>
+        <div class="" >
+            <div ng-repeat="item in inputs">
+                <input ng-model="item.value"\> <button>get input value {{inputs}}</button>
+            </div>
+            <button ng-click="addField()">Add field +</button>
+
+<!--            <div id="field" ng-repeat="item in inputs">-->
+<!--                    <input ng-model="item.value" autocomplete="off" class="form-control" id="field1" name="prof1" type="text" placeholder="add service" />-->
+                    <button type="button" ng-click="newService(cat)">+</button>
+<!--                </div>-->
             <br>
             <small>Press + to add another form field :)</small>
         </div>
@@ -88,7 +93,7 @@
         
 
         <div class="form-group" style="padding-top: 2%">
-            <button style="width: 100%; background: deeppink; border: none;" type="submit" class="btn btn-primary" ng-click="newService(cat, serve)">Create</button>
+            <button style="width: 100%; background: deeppink; border: none;" type="submit" class="btn btn-primary" ng-click="">Create</button>
 
         </div>
     </form>
@@ -97,34 +102,3 @@
 <div class="col-sm-2"></div>
 
 
-<script>
-    $(document).ready(function(){
-        var next = 1;
-        $(".add-more").click(function(e){
-            e.preventDefault();
-            var addto = "#field" + next;
-            var addRemove = "#field" + (next);
-            next = next + 1;
-            var newIn = '<input autocomplete="off" ng-model="serve" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
-            var newInput = $(newIn);
-            var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
-            var removeButton = $(removeBtn);
-            $(addto).after(newInput);
-            $(addRemove).after(removeButton);
-            $("#field" + next).attr('data-source',$(addto).attr('data-source'));
-            $("#count").val(next);
-
-            $('.remove-me').click(function(e){
-                e.preventDefault();
-                var fieldNum = this.id.charAt(this.id.length-1);
-                var fieldID = "#field" + fieldNum;
-                $(this).remove();
-                $(fieldID).remove();
-            });
-        });
-
-
-
-    });
-
-</script>

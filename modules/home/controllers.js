@@ -300,6 +300,20 @@ function ($scope, $rootScope, $http) {
         function ($scope, $rootScope, $http) {
 
             $scope.title =  "List Services";
+
+            $scope.inputs = [];
+
+            $scope.inputs = [];
+            $scope.addField=function(){
+                $scope.inputs.push({});
+                let one = $scope.inputs;
+                console.log('one', one)
+                console.log('one', _.map(one, 'value'));
+                $scope.display = _.map(one, 'value');
+                localStorage.setItem('dynamic', JSON.stringify(one));
+
+            };
+
             $scope.loadServices = function loadServices(){
                 $http({
                     method : "GET",
@@ -312,7 +326,7 @@ function ($scope, $rootScope, $http) {
                     console.log("badResponse", response.data);
                     $scope.noData = "No Data Available";
                 });
-            }
+            };
 
             $scope.loadCategories = function loadCategories(){
                 $http({
@@ -327,9 +341,27 @@ function ($scope, $rootScope, $http) {
                 });
             }
 
-            $scope.newService = function newService(cat, serve){
-                console.log("response", cat);
-                console.log("response", serve);
+            $scope.newService = function newService(d){
+                let one = JSON.parse(localStorage.getItem('dynamic'));
+
+                let name = [];
+
+                let first = _.map(one, function(o) {
+
+                    if(o.value){
+                        name.push({name: o.value})
+                        console.log('first', name);
+                        return name;
+                    }
+
+                })
+
+                let pData = {category: d,
+                    services: first[0]
+                }
+
+                console.log('three', pData);
+
             }
 
 
